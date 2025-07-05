@@ -1,4 +1,4 @@
-import os
+﻿import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -12,14 +12,14 @@ load_dotenv()
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
-login_manager.login_view = 'auth.login' # Redirige a esta vista si el usuario no est� logueado
+login_manager.login_view = 'auth.login' # Redirige a esta vista si el usuario no estï½ logueado
 login_manager.login_message = 'Por favor, inicia sesion para acceder a esta pagina.'
 login_manager.login_message_category = 'info'
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
 
-    # Configurar la aplicaci�n
+    # Configurar la aplicaciï½n
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
     # Usar una base de datos en la carpeta 'instance' para mantener el proyecto limpio
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI', f"sqlite:///{os.path.join(app.instance_path, 'database.db')}")
@@ -48,3 +48,4 @@ def create_app():
         from . import models
 
     return app
+

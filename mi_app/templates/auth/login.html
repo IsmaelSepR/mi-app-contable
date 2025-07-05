@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+ï»¿{% extends "base.html" %}
 
 {% block content %}
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header"><h2>Iniciar Sesión</h2></div>
+                <div class="card-header"><h2>Iniciar Sesion</h2></div>
                 <div class="card-body">
                     <form method="POST" action="" novalidate>
                         {{ form.hidden_tag() }}
@@ -44,9 +44,12 @@
             </div>
             <div class="border-top pt-3 mt-3">
                 <small class="text-muted">
-                    ¿Necesitas una cuenta? <a class="ml-2" href="{{ url_for('auth.register') }}">Regístrate ahora</a>
+                    Necesitas una cuenta? <a class="ml-2" href="{{ url_for('auth.register') }}">Registrate ahora</a>
                 </small>
             </div>
         </div>
     </div>
 {% endblock %}
+
+
+

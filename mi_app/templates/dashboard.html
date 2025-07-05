@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+﻿{% extends "base.html" %}
 
 {% block content %}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard de {{ current_user.username }}</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <a href="{{ url_for('main.add_transaction') }}" class="btn btn-sm btn-outline-secondary">
-                Añadir Transacción
+                AÃ±adir TransacciÃ³n
             </a>
         </div>
     </div>
@@ -31,13 +31,13 @@
         </div>
     </div>
 
-    <h2>Últimas Transacciones</h2>
+    <h2>Ãšltimas Transacciones</h2>
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
                     <th>Fecha</th>
-                    <th>Descripción</th>
+                    <th>DescripciÃ³n</th>
                     <th>Tipo</th>
                     <th>Monto</th>
                     <th>Acciones</th>
@@ -53,16 +53,17 @@
                     <td>
                         <a href="{{ url_for('main.edit_transaction', id=t.id) }}" class="btn btn-sm btn-warning">Editar</a>
                         <form action="{{ url_for('main.delete_transaction', id=t.id) }}" method="post" style="display:inline;">
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar esta transacción?')">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('ÂEstÃs seguro de que quieres eliminar esta transacciÃ³n?')">Eliminar</button>
                         </form>
                     </td>
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="5" class="text-center">No hay transacciones todavía. ¡Añade una!</td>
+                    <td colspan="5" class="text-center">No hay transacciones todavÃ­a. ÂAÃ±ade una!</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 {% endblock %}
+

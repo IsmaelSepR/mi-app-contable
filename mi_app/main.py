@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, abort
+ï»¿from flask import Blueprint, render_template, redirect, url_for, flash, abort
 from flask_login import login_required, current_user
 from mi_app import db
 from mi_app.models import Transaction
@@ -45,13 +45,13 @@ def add_transaction():
         )
         db.session.add(transaction)
         db.session.commit()
-        flash('Transacción añadida con éxito.', 'success')
+        flash('Transaccion anadida con exito.', 'success')
         return redirect(url_for('main.dashboard'))
     
     if not form.date.data:
         form.date.data = datetime.utcnow().date()
         
-    return render_template('transaction_form.html', title='Añadir Transacción', form=form, legend='Nueva Transacción')
+    return render_template('transaction_form.html', title='Anadir Transaccion', form=form, legend='Nueva Transaccion')
 
 @main_bp.route('/transaction/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
@@ -64,10 +64,10 @@ def edit_transaction(id):
     if form.validate_on_submit():
         form.populate_obj(transaction)
         db.session.commit()
-        flash('Transacción actualizada con éxito.', 'success')
+        flash('Transaccion actualizada con exito.', 'success')
         return redirect(url_for('main.dashboard'))
     
-    return render_template('transaction_form.html', title='Editar Transacción', form=form, legend='Editar Transacción')
+    return render_template('transaction_form.html', title='Editar Transaccion', form=form, legend='Editar Transaccion')
 
 @main_bp.route('/transaction/delete/<int:id>', methods=['POST'])
 @login_required
@@ -77,5 +77,8 @@ def delete_transaction(id):
         abort(403)
     db.session.delete(transaction)
     db.session.commit()
-    flash('Transacción eliminada con éxito.', 'info')
+    flash('Transaccion eliminada con exito.', 'info')
     return redirect(url_for('main.dashboard'))
+
+
+

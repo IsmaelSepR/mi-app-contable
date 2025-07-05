@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash
+﻿from flask import Blueprint, render_template, redirect, url_for, flash
 from mi_app import db
 from mi_app.models import User
 from mi_app.forms import LoginForm, RegistrationForm
@@ -28,14 +28,15 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Email o contrase�a inv�lidos.', 'danger')
+            flash('Email o contraseï½a invï½lidos.', 'danger')
             return redirect(url_for('auth.login'))
         login_user(user, remember=form.remember_me.data)
         return redirect(url_for('main.dashboard'))
-    return render_template('auth/login.html', title='Iniciar Sesi�n', form=form)
+    return render_template('auth/login.html', title='Iniciar Sesiï½n', form=form)
 
 @auth_bp.route('/logout')
 def logout():
     logout_user()
-    flash('Has cerrado sesi�n.', 'info')
+    flash('Has cerrado sesiï½n.', 'info')
     return redirect(url_for('main.index'))
+
