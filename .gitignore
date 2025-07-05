@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.sqlite
+*.db
+.vscode/
+venv/
+__pycache__/
+*.sqlite
+*.db
+.vscode/
